@@ -6,6 +6,10 @@
             {
                 "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/CosmosDB_Multi-Tenant/main/getstartpage.md",
                 "Order": 1
+            },
+            {
+                "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/CosmosDB_Multi-Tenant/main/README.md",
+                "Order": 2
             }
         ]
     }
