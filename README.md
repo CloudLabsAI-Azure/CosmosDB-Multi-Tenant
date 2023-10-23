@@ -54,11 +54,10 @@ All the above use cases need a new mindset and special features. This workshop w
 
 
 ## Workshop Challenge List
-- [Challenge-1: Deploy Azure Cosmos DB Service](#challenge-1-Deploy-Azure-Cosmos-DB-Service)
-- [Challenge-2: Model data to build SaaS applications](#Challenge-2-Model-data-to-build-SaaS-applications)
-- [Challenge-3: Design Cosmos DB Account to serve small, medium and large customers](#Challenge-3-Design-Cosmos-DB-Account-to-serve-small-medium-and-large-customers)
-- [Challenge-4: Validate Cosmos DB features Auto Failover, Autoscale and Low Latency](#Challenge-4-Validate-Cosmos-DB-features-Auto-failover-Autoscale-and-Low-latency)
-- [Challenge-5: Build an application using Cosmos DB Emulator at no cost](#Challenge-5-Build-an-application-using-Azure-Cosmos-DB-at-no-cost)
+- [Challenge-1: Model data to build SaaS applications](#Challenge-2-Model-data-to-build-SaaS-applications)
+- [Challenge-2: Design Cosmos DB Account to serve small, medium and large customers](#Challenge-3-Design-Cosmos-DB-Account-to-serve-small-medium-and-large-customers)
+- [Challenge-3: Validate Cosmos DB features Auto Failover, Autoscale and Low Latency](#Challenge-4-Validate-Cosmos-DB-features-Auto-failover-Autoscale-and-Low-latency)
+- [Challenge-4: Build an application using Cosmos DB Emulator at no cost](#Challenge-5-Build-an-application-using-Azure-Cosmos-DB-at-no-cost)
 
 ## Multi-Tenancy features for Software Companies 
 
@@ -91,61 +90,7 @@ customers using this use case.
 ## Architecture Solution Diagram
 <img src="./images/Multi-Tenant_Cosmos_DB_Workshop_Architecture.jpg" alt="Architecture for Azure Cosmos DB Lab" Width="600"> 
 
-
-
-## Challenge-1: Deploy Azure Cosmos DB Service 
-
-We have developed an Azure Deployment script to provision the required Azure Services used in the above architecture diagram.
-
-1.1 Open a new InPrivate window from your Microsoft Edge browser. 
-
-<img src="./images/Browser_in_private_Marked.jpg" alt="Edge Browser InPrivate Window selection" width="400">
-
-1.2 Enter the following Workshop github link in the browser.
-```
-	https://github.com/microsoft/CosmosDB_Multi-Tenant
-```
-
-1.3 Click **Challenge-1** from Workshop Challenge List. 
-
-1.4 Click the "Deploy to Azure" button
-
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2FCosmosDB_Multi-Tenant%2Fmain%2Fazuredeploy.json)
-
-1.5 Enter your Workshop **login Id and Password** provided by the instructor.
-
-1.6 You will see **Welcome to SDP Innovation!** screen. Select **Yes**.
-
-1.7. Enter the following options in the custom deployment screen.
-	
-* Select your allocated resource group from the dropdown.
-
-* Select your region from the dropdown list for **Cosmos DB Location** selection. 
-
-Best practice is to keep resource group and Cosmos DB account in the same region. We had to set the resource group
-"West US" to automate the deployment script. Don't follow this practice in your environment.
-
-1.8 Click on "Review+create" button.
-
-<img src="./images/CosmosDB_AzureDeploymentOptions_Marked.jpg" alt="Azure Custom Depolyment Screen" Width="600">
-
-1.9 It completes the validation as the next step and click on 'create' button.
-
-It will provision Azure Cosmos DB account in your subscription:
-
-It may take 2 to 5 minutes to create the services.
-
-1.10 Click on "Go to resource group" when the deployment is complete.
-
-<img src="./images/CosmosDB_AzureDeployment_Complete_Marked.jpg" alt="Deployment complete" Width="600">
-
-It will take you to your resource group showing the installed Azure Cosmos DB services.
-
-<img src="./images/CosmosDB_AzureDeployment_ResourceGroup_Marked.jpg" alt="Resource Group with Services list" Width="600">
-
-You have successfully deployed the required services to Azure. Congratulations for completing your first challenge.
-
-## Challenge-2: Model data to build SaaS applications
+## Challenge-1: Model data to build SaaS applications
 Let us review the object model for this application and plan the data model for SaaS application.
 
 ### Multi-Tenant Reservation System Object Model
@@ -181,10 +126,9 @@ databases. **Cosmos DB Data Model requires a different mindset and also requires
 Apply the same methodology to migrate your legacy applications or to build new green field applications. **You have successfully 
 completed challenge 2 by creating a Cosmos DB data model based on highly frequent access patterns!!**
 
-## Challenge-3: Design Cosmos DB Account to serve small, medium and large customers
+## Challenge-2: Design Cosmos DB Account to serve small, medium and large customers
 
 Evaluate options to keep relevant data in one logical partition using partitioning key.
-
 
 ### Database Strategies to support small, medium and large customers
 
@@ -198,7 +142,7 @@ It can be a good choice for building a pricing model that includes a free tier, 
 In general, by using shared containers, you achieve the highest density of tenants and therefore the lowest price 
 per tenant.
 
-#### 3.1 Create Cosmos DB Containers with shared database throughput
+#### 2.1 Create Cosmos DB Containers with shared database throughput
 
 * Access Cosmos DB Service in Azure Portal.
 * Select **Data Explorer** from the left panel.
@@ -223,7 +167,7 @@ creating single database per customer.**
 Hiking Hotel is a medium size business entity and you can avoid noisy neighbor issue by providing a dedicated throughput at 
 the container level. Follow the steps to create a dedicated throughput as part of the shared throughput database.
 
-#### 3.2 Add Cosmos DB container with dedicated throughput under shared database throughput 
+#### 2.2 Add Cosmos DB container with dedicated throughput under shared database throughput 
 
 Follow the steps to provision a new container with a dedicated throughput in a shared throughput database.  
 
@@ -243,7 +187,7 @@ You can provision dedicated containers for each business entity. This can work w
 throughput requirement and for providing dedicated capacity. It will provide guaranteed level of performance, serve medium size 
 customers.
 
-#### 3.3 Create Cosmos DB Database to serve large customers
+#### 2.3 Create Cosmos DB Database to serve large customers
 
 * Select **DedicatedThroughputDB** database
 * Expand **GoodFellas** container.
@@ -276,10 +220,9 @@ perform faster queries with low cost.
 Partition Key plays a major role to save costs and to provide sub millisecond response time. Make sure to keep the partition key 
 as part of most frequent queries. Cosmos DB also provides Document Type to keep relevant data in one container. 
 
+#### 2.4 Load Business data into containers
 
-#### 3.4 Load Business data into containers
-
-Download the Workshop Data zip file (Multi-Tenant_CosmosDB_Workshop_data.zip) from the provided github link data folder. 
+Download the Workshop Data zip file (Multi-Tenant_CosmosDB_Workshop_data.zip) from the  github link [data folder](https://github.com/microsoft/CosmosDB_Multi-Tenant/blob/main/data/Multi-Tenant_CosmosDB_Workshop_data.zip). 
 Unzip the file into your local folder and you should see the following files.
 
 <img src="./images/MultiTenant_dataFile_list_3d.jpg" alt="list of multi-tenant reservation and availability data" width="600" >
@@ -290,7 +233,7 @@ would make sense to create TenantID as the partition key and collect room availa
 
 You can also keep reference data such as Guest info and room type definitions in the same container. 
 
-##### 3.4.1 Load Room Availability and Reservation data into **CasinoHotel** Container. 
+##### 2.4.1 Load Room Availability and Reservation data into **CasinoHotel** Container. 
 * Expand **Casino Hotels** container under **SharedThroughputDB** database
 * select **items** section
 * Select **upload** to load the data files from the local foldder.
@@ -301,17 +244,17 @@ You can also keep reference data such as Guest info and room type definitions in
 
 * Load Reservation data into the same container by selecting **CasinoHotel_Reservation.json** file.
 
-##### 3.4.2 Load Room Availability and Reservation data into **FamilyFunHotel** Container. 
+##### 2.4.2 Load Room Availability and Reservation data into **FamilyFunHotel** Container. 
 * Follow the above steps to load the data.
 
-##### 3.4.3 Load Room Availability and Reservation data into **HikingHotel** Container. 
+##### 2.4.3 Load Room Availability and Reservation data into **HikingHotel** Container. 
 * Follow the above steps to load the data.
 
-##### 3.4.4 Load Room Availability and Reservation data into **GoodFellasHotel** Container. 
+##### 2.4.4 Load Room Availability and Reservation data into **GoodFellasHotel** Container. 
 * Follow the above steps to load the data.
 
 
-#### 3.5 Query Data using Data Explorer
+#### 2.5 Query Data using Data Explorer
 
 You can query data using APIs and also can use Data Explorer for quick check.
 
@@ -331,10 +274,10 @@ With this challenge you have gained a hands-on experience to create multi-tenant
 and large customers. Congratulations!!
 
 
-## Challenge-4: Validate Cosmos DB features Auto failover, Autoscale and Low latency
+## Challenge-3: Validate Cosmos DB features Auto failover, Autoscale and Low latency
 
 
-### 4.1 High Availability Features:
+### 3.1 High Availability Features:
 Azure Cosmos DB is designed to provide multiple features and configuration options to achieve high availability to satisfy 
 the mission critical enterprise application's requirement.
 
@@ -380,7 +323,7 @@ Select the "On" button under "Enable Service-Managed Failover".
 **No action is needed for this lab.** It will take time to enable the failover option.
 
 
-### 4.2 Autoscale for scalability
+### 3.2 Autoscale for scalability
 It allows you to scale the throughput (RU/s) of your database or container automatically and instantly. 
 The throughput is scaled based on the usage, without impacting the availability, latency, throughput, or 
 performance of the workload.
@@ -416,7 +359,7 @@ SELECT * FROM c where c.type='Reservation'
 select "Query Stats" tab and check the Query execution time. It shows the sub millisecond response time.
 
 
-## Challenge-5: Build an application using Azure Cosmos DB at no cost  
+## Challenge-4: Build an application using Azure Cosmos DB at no cost  
 Cosmos DB is a developer friendly database and supports SaaS applications with no schema and indexing to manage. 
 It also provides built in Cache for improved performance. It provides Cosmos DB Emulator tool to build your 
 applications using Cosmos DB in your development environment with no cost.
@@ -427,24 +370,24 @@ It will you programming language options .NET, Xamarin, Java, Node.js & Python t
 
 Use the default .NET option.
 
-5.1 Select create 'Items' container button.
+4.1 Select create 'Items' container button.
 
 It creates an **Items** container in "ToDoList" database with 400 RU throughput capacity.
 
 <img src="./images/CosmosDB_QuickStart_AddContainer_Marked.jpg" alt="Quick Start Create Container" width="600">
 
-5.2 Select Download button to download .NET app to your laptop.
+4.2 Select Download button to download .NET app to your laptop.
 
 <img src="./images/CosmosDB_QuickStart_Download_App_Marked.jpg" alt="Download .NET app button" width="600">
 
-5.3 Extract all from 'DocumentDB-Quickstart-DotNet.zip' file and open "CosmosGettingStarted.sln" in sql-dotnot folder 
+4.3 Extract all from 'DocumentDB-Quickstart-DotNet.zip' file and open "CosmosGettingStarted.sln" in sql-dotnot folder 
 with Visual Studio 2022.
 
 <img src="./images/cosmosdb_dotnet_downloadzip_marked.jpg" alt="Download ZIP and open Visual Studio" width="600">
 
-5.4 Clean and rebuild the solution.
+4.4 Clean and rebuild the solution.
 
-5.5 Put a breakpoint in **GetStartedDemoAsync** method at  
+4.5 Put a breakpoint in **GetStartedDemoAsync** method at  
 
 ```
 this.ReplaceFamilyItemAsync();
@@ -452,20 +395,20 @@ this.ReplaceFamilyItemAsync();
 
 <img src="./images/cosmosdb_dotnet_app_breakpoint_marked.jpg" alt="create a breakpoint" width="800">
 
-5.6 run the debug program by selecting green start button.
+4.6 run the debug program by selecting green start button.
 
 <img src="./images/cosmosdb_dotnet_app_exec_output.jpg" alt="create a breakpoint" width="600">
 
 This application creates documents in the Cosmos DB Items container and stops at the breakpoint.
 
-5.7 Go back to Cosmos DB in Azure Portal and verify the data the application has created.
+4.7 Go back to Cosmos DB in Azure Portal and verify the data the application has created.
 
 <img src="./images/CosmosDB_QuickStart_Create_Items_Marked.jpg" alt="create a breakpoint" width="800">
 
-5.8 Come back to Visual Studio and continue the execution by selecting 'Continue' button.
+4.8 Come back to Visual Studio and continue the execution by selecting 'Continue' button.
 It will delete all the items it created in the Cosmos DB database.
 
-5.9 Go back to Cosmos DB in Azure Portal and verify if the application has deleted the database, container
+4.9 Go back to Cosmos DB in Azure Portal and verify if the application has deleted the database, container
 and items.
 
 You are successfully built an application to access Cosmos DB Service and to create database, container and 
