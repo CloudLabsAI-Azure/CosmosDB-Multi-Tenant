@@ -1,10 +1,11 @@
 [
     {
-        "Name": "Azure Cosmos DB for Multitenant Applications Workshop",
-        "Language": "English",
-        "BaseURL": "https://github.com/CloudLabsAI-Azure/CosmosDB_Multi-Tenant",
-        "Files": [
-            {
+      "Name": "Azure Cosmos DB for Multitenant Applications Workshop",
+      "Language": "English",
+      "BaseURL": "https://github.com/CloudLabsAI-Azure/Cloud-Native-Application",
+      "Files": [
+                
+        {
                 "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/CosmosDB_Multi-Tenant/main/getstartpage.md",
                 "Order": 1
             },
@@ -12,6 +13,6 @@
                 "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/CosmosDB_Multi-Tenant/main/README.md",
                 "Order": 2
             }
-        ]
+      ]
     }
-]
+  ]
