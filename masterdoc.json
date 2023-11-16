@@ -2,7 +2,7 @@
     {
       "Name": "Azure Cosmos DB for Multitenant Applications Workshop",
       "Language": "English",
-      "BaseURL": "https://github.com/CloudLabsAI-Azure/Cloud-Native-Application",
+      "BaseURL": "https://github.com/CloudLabsAI-Azure/CosmosDB-Multi-Tenant",
       "Files": [
                 
         {
