@@ -50,8 +50,4 @@
 
     ![](images/gettingstart11.png "Resource groups")
 
-1. Navigate to **Azure Cosmos DB for Multitenant Applications Workshop** GitHub repository to start with the challenges in this workshop.
-
-   ```
-   https://github.com/microsoft/CosmosDB_Multi-Tenant
-   ```
+1. Navigate to the next page to start with the challenges in this workshop.
