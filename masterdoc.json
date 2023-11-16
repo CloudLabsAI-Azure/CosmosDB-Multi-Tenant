@@ -6,11 +6,11 @@
       "Files": [
                 
         {
-                "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/CosmosDB_Multi-Tenant/main/getstartpage.md",
+                "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/CosmosDB-Multi-Tenant/main/getstartpage.md",
                 "Order": 1
             },
             {
-                "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/CosmosDB_Multi-Tenant/main/README.md",
+                "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/CosmosDB-Multi-Tenant/main/README.md",
                 "Order": 2
             }
       ]
