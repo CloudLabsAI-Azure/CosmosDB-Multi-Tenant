@@ -387,7 +387,7 @@ with Visual Studio 2022.
 
 4.4 Clean and rebuild the solution.
 
-4.5 Put a breakpoint in **GetStartedDemoAsync** method at  
+4.5  Put a breakpoint in line 74 on code in **GetStartedDemoAsync**. method at  
 
 ```
 this.ReplaceFamilyItemAsync();
