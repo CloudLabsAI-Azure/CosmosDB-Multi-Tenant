@@ -64,7 +64,7 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
 
 1. Then select your Azure Cosmos DB account **smartbookinginc-<inject key="DeploymentID" enableCopy="false" />** from the Workshop-MT-CosmosDB-<inject key="DeploymentID" enableCopy="false" /> resource group.
 
-    ![](images/gettingstart10.png "Resource groups")
+        ![](images/cosmosdb-rg.png "Resource groups")
 
 1. Once you are inside Azure Cosmos DB account from the left side menu click on **Data Explorer**, and verify the **DedicatedThroughputDB** and **SharedThroughputDB** databases.
 
